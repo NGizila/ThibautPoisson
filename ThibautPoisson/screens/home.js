@@ -3,20 +3,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Button, Card, Title } from 'react-native-paper';
+
 export default class Home extends React.Component {
  
- render() {
-  const row1 = ['Produits']
-  const row2 = ['Bateaux','Restaurants']
-  const row3 = ['Recettes','Contacte']
-  // const table = ['Products','Bateau','Restaurant','Promotion','Contact']
-  // const table = [row1,row2]
-  function cardFunction(cardInfo){
+  cardFunction(cardInfo){
     return(
       <View key={cardInfo} style={styles.table}>
         <Card style={styles.item}>
           <Card.Content style={{textAlign: "center"}}>
-            <Button>
+            <Button  onPress={()=>this.props.navigation.navigate(cardInfo)}>
               <Title>{cardInfo}</Title>
             </Button>
           </Card.Content>
@@ -24,28 +19,35 @@ export default class Home extends React.Component {
       </View>
     )
   }
+  render() {
+  const row1 = ['Produits']
+  const row2 = ['Bateaux','Restaurants']
+  const row3 = ['Recettes','Contacte']
+  // const table = ['Products','Bateau','Restaurant','Promotion','Contact']
+  // const table = [row1,row2]
   
+
   let cardData1 = row1.map(cardInfo => (
-    cardFunction(cardInfo)
+    this.cardFunction(cardInfo)
   ))
   let cardData2 = row2.map(cardInfo => (
-    cardFunction(cardInfo)
+    this.cardFunction(cardInfo)
   ))
   let cardData3 = row3.map(cardInfo => (
-    cardFunction(cardInfo)
+    this.cardFunction(cardInfo)
   ))
 
-  function goToScreen(screen){
-    console.log(screen);
-    this.props.navigation.navigate(screen);
-  }
-  
+
   return(
     <View style={styles.container}>
       <View style={styles.row}>
         <View style={styles.column}>
-          <View  style={styles.row}>
-            {cardData1}
+          <View  style={styles.row} >
+            {/* <Button title={cardData1} onPress={()=>goToScreen(cardData1)}> */}
+            
+              {cardData1}
+            
+              {/* </Button> */}  
           </View>
           <View  style={styles.row}>
             {cardData2}

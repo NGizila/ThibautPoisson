@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Home from './screens/home';
+import Produits from './screens/produits-categorie';
 
 
 
@@ -13,6 +14,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Page d'accueil" component={Home} options={{titile: 'Welcome'}} />
+        <Stack.Screen name="Page de produits" component={Produits} options={{title: 'Choissisez vos produits'}} />
         {/* <Stack.Screen name="Promotion" component={Promotion} options={{titile: 'Promotion'}} />
         <Stack.Screen name="Bateau" component={Bateau} options={{titile: 'Bateau'}} />
         <Stack.Screen name="Resto" component={Restaurant} options={{titile: 'Resto'}} />
