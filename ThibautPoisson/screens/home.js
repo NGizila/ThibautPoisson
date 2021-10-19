@@ -7,8 +7,8 @@ export default class Home extends React.Component {
  
  render() {
   const row1 = ['Produits']
-  const row2 = ['Bateau','Restaurant']
-  const row3 = ['Promotion','Contact']
+  const row2 = ['Bateaux','Restaurants']
+  const row3 = ['Recettes','Contacte']
   // const table = ['Products','Bateau','Restaurant','Promotion','Contact']
   // const table = [row1,row2]
   function cardFunction(cardInfo){
@@ -34,6 +34,11 @@ export default class Home extends React.Component {
   let cardData3 = row3.map(cardInfo => (
     cardFunction(cardInfo)
   ))
+
+  function goToScreen(screen){
+    console.log(screen);
+    this.props.navigation.navigate(screen);
+  }
   
   return(
     <View style={styles.container}>
