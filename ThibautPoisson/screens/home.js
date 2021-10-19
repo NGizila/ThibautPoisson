@@ -44,6 +44,11 @@ export default class Home extends React.Component {
         <View style={styles.column}>
           <View  style={styles.row} >
             {cardData1}  
+            {/* <Button title={cardData1} onPress={()=>goToScreen(cardData1)}> */}
+            
+              {cardData1}
+            
+              {/* </Button> */}  
           </View>
           <View  style={styles.row}>
             {cardData2}
