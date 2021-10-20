@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, FlatList,StatusBar } from 'react-native';
+import { StyleSheet, Text, View,ImageBackground, SafeAreaView, FlatList,StatusBar, ImageBackgroundBase } from 'react-native';
 import { TouchableOpacity} from 'react-native-gesture-handler'
 import Details from './details';
 export default class Recettes extends React.Component {
@@ -18,7 +18,7 @@ export default class Recettes extends React.Component {
                     onPress={()=>this.props.navigation.navigate('Details',item)}
             >
             <View style={styles.item}>
-                <Text style={styles.title}>{item.name}</Text>
+                <Text style={styles.textBouton}>{item.name}</Text>
           </View>
           </TouchableOpacity>
         </View>
@@ -43,36 +43,47 @@ export default class Recettes extends React.Component {
     ))
 
      return(
-       <View style={styles.container}>
-         <View style={styles.header}>
-              <View>
-                <Text style={{fontSize: 25, fontWeight: 'bold'}}>Nos recettes</Text>
-                <Text style={{fontSize: 30, fontWeight: 'bold'}}>
-                  ThibaultPoisson
-                </Text>
-              </View>
-          </View>
-          <View style={styles.categoryContainer}>
-            <Text style={{fontSize: 15, fontStyle: 'italic', fontWeight: 'bold'}}>
-              Toutes les recettes du bateau de Thibault
-            </Text>
-            {recettesIntroData}
-          </View>
-          
-        <SafeAreaView style={styles.container}>
-            <FlatList
-                data={recettes}
-                renderItem={renderItem}
-                keyExtractor={item => item}
-                numColumns={2}
-            />
-        </SafeAreaView>
-       </View>
+      <>
+      <ImageBackground style={styles.imgBackground} source={require("../assets/background.png")}>
+        <View style={styles.container}>
+          <View style={styles.header}>
+                <View>
+                  <Text style={{fontSize: 25, fontWeight: 'bold'}}>Nos recettes</Text>
+                  <Text style={{fontSize: 30, fontWeight: 'bold'}}>
+                    ThibaultPoisson
+                  </Text>
+                </View>
+            </View>
+            <View style={styles.categoryContainer}>
+              <Text style={{fontSize: 15, fontStyle: 'italic', fontWeight: 'bold'}}>
+                Toutes les recettes du bateau de Thibault
+              </Text>
+              {recettesIntroData}
+            </View>
+            
+          <SafeAreaView style={styles.container}>
+              <FlatList
+                  data={recettes}
+                  renderItem={renderItem}
+                  keyExtractor={item => item}
+                  numColumns={2}
+              />
+          </SafeAreaView>
+        </View>
+      </ImageBackground>
+      </>
+       
      )
     }
    }
 
 const styles = StyleSheet.create({
+  imgBackground: {
+    width: '100%',
+    height: '100%',
+    flex: 1,
+    position: 'absolute',
+    },
     header: {
       marginBottom: 20,
       marginTop: 30,
@@ -94,10 +105,17 @@ const styles = StyleSheet.create({
     },
 
     item: {
-      backgroundColor: 'white',//'#f9c2ff',
+      backgroundColor: 'rgba(0,0,0, 0.4)',
       padding: 20,
       marginVertical: 8,
       marginHorizontal: 16,
+    },
+    textBouton:{
+      color: 'white',
+      fontsize: 30,
+      flex: 1,
+      width: 300,
+      flexDirecton: 'row',
     },
     title: {
         flex: 1,
