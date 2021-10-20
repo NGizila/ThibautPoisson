@@ -16,8 +16,8 @@ import { Button } from 'react-native-paper';
 const Stack = createStackNavigator();
 
 export default function App() {
-  const headerProducts = {
-      headerTitle: (props) => <Image source={navBackground} style={{width : 240, height : 50}}></Image>,
+  const headerProducts = ({navigation}) => ({
+      headerTitle: () => <Image source={navBackground} style={{width : 240, height : 50}}></Image>,
       headerTintColor: '#fff',
       headerTitleAlign: 'center',
       headerStyle: {
@@ -25,18 +25,20 @@ export default function App() {
           flex: 1,
           backgroundColor: 'rgb(0,0,0)',
       },  
-      headerRight: (props) => (
+      headerRight: () => (
           <View>
-          <Button onPress={() => props.navigation.navigate('Panier')} >
+          <Button onPress={() => navigation.navigate('Panier')} >
             <Image style={styles.homeLogo} source={logoCart} />
           </Button>
           </View>
           
       ),
-      headerLeft: (props) => (
-          <Text {...props}><Image  style={styles.homeLogo} source={logoHome}/></Text>
+      headerLeft: () => (
+        <View>
+          <Button onPress={() => navigation.navigate("Page d'accueil")}><Image  style={styles.homeLogo} source={logoHome}/></Button>
+        </View>
       ),
-  }
+  });
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="screen">

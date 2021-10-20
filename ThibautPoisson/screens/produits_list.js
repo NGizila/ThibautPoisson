@@ -1,8 +1,11 @@
 import React from 'react';
 import {Text, View, StyleSheet, ImageBackground, TouchableOpacity, Image} from 'react-native';
 import poulpe from '../assets/products/poulpe.png'
+import AsyncStorage from '@react-native-community/async-storage';
+import ListComponent from '../components/listcomponent';
 
 export default class ProduitsList extends React.Component{
+    
     render(){
         const productsList = this.props.route.params
         console.log(productsList)
@@ -12,15 +15,8 @@ export default class ProduitsList extends React.Component{
                     <Text style={styles.text}>Choissisez vos produits</Text>
                     <View style={{flex:1}}>
                         {productsList.map((value, index)=> {
-                        return(
-                        <TouchableOpacity style={styles.button}>
-                            <View style={styles.buttonList}>
-                                <Image source={poulpe} style={styles.tinyIcon}></Image>
-                                <Text style={styles.textButton1}>{value.name}</Text>
-                                <Text style={styles.textButton}>{value.price}€</Text>
-                            </View>
-                        </TouchableOpacity>)
-                        })}
+                        return( <ListComponent value = {value}/>
+                        )})}
                     </View>
                 </ImageBackground>
             </View>        
