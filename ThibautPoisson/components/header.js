@@ -14,7 +14,6 @@ export default function Header(){
   )
 }
 
-
 const styles = StyleSheet.create({
   header: {
     width: '100%',

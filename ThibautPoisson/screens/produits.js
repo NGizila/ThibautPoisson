@@ -3,10 +3,10 @@ import { ImageBackground, StyleSheet, Text, View, TouchableOpacity, Image } from
 import { Button } from "react-native-paper"
 import HeaderProduits from "../components/header"
 import '../App.js'
+import poulpe from '../assets/products/poulpe.png'
 
 const background = require('../assets/background.png')
 const homeIcon = require('../assets/products/homeLogo.png')
-const poulpe = require('../assets/products/poulpe.png')
 
 const data = require('../constants/Products.json')
 
@@ -16,47 +16,54 @@ export default class Produits extends React.Component{
         this.state = {products: []}
     }
 
-    componentDidMount(){
-        fetch(data)
-            .then(res => res.json())
-            .then(products => this.setState({products}))
+    async componentDidMount(){
+        await this.setState({products: data})
     }
 
     render(){
-        const {products} = this.state;
+        const filterPoissons = this.state.products.filter(value=>value.category==0)
+        const filterCoquillages = this.state.products.filter(value=>value.category==1)
+        const filterCrustaces = this.state.products.filter(value=>value.category==2)
+        const filterPromotion = this.state.products.filter(value=>value.discount!=0)
         return(
             <View style={styles.container}>
                 <ImageBackground source={background} resizeMode="cover" style={styles.image}>
                     <Text style={styles.text}>Choissisez vos produits</Text>
                     <View style={styles.container}>
                         <TouchableOpacity style={styles.button} 
-                        data={this.state.products.filter(value=>value.category==0)}
-                        onPress={() => this.props.navigation.navigate('ProduitsList')}>
-                            <Image source={{poulpe}} size={24}></Image>
-                            <Text style={styles.textButton}>Poissons</Text>
+                        onPress={() => this.props.navigation.navigate('ProduitsList', filterPoissons)}>
+                            <View style={styles.buttonList}>
+                                <Image source={poulpe} style={styles.bigIcon}></Image>
+                                <Text style={styles.textButton}>Poissons</Text>
+                            </View>
                         </TouchableOpacity>
-                        <Button style={styles.button} 
-                        data={this.state.products.filter(value=>value.category==1)}
-                        onPress={() => this.props.navigation.navigate('ProduitsList')}>
-                            <Text style={styles.textButton}>Coquillages</Text>
-                        </Button>
-                        <Button style={styles.button}
-                        data={this.state.products.filter(value=>value.category==2)}
-                        onPress={() => this.props.navigation.navigate('ProduitsList')}>
-                            <Text style={styles.textButton}>Crustaces</Text>
-                        </Button>
-                        <Button style={styles.button}  
-                        data={this.state.products.filter(value=>value.discount!=0)}
-                        onPress={() => this.props.navigation.navigate('ProduitsList')}>
-                            <Text style={styles.textButton}>Promotions</Text>
-                        </Button>
+                        <TouchableOpacity style={styles.button} 
+                        onPress={() => this.props.navigation.navigate('ProduitsList', filterCoquillages)}>
+                            <View style={styles.buttonList}>
+                                <Image source={poulpe} style={styles.bigIcon}></Image>
+                                <Text style={styles.textButton}>Coquillages</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.button}
+                        onPress={() => this.props.navigation.navigate('ProduitsList', filterCrustaces)}>
+                            <View style={styles.buttonList}>
+                                <Image source={poulpe} style={styles.bigIcon}></Image>
+                                <Text style={styles.textButton}>Crustaces</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.button}  
+                        onPress={() => this.props.navigation.navigate('ProduitsList', filterPromotion)}>
+                            <View style={styles.buttonList}>
+                                <Image source={poulpe} style={styles.bigIcon}></Image>
+                                <Text style={styles.textButton}>Promotions</Text>
+                            </View>
+                        </TouchableOpacity>
                     </View>
                 </ImageBackground>
             </View>
         )
     }
 };
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -72,16 +79,25 @@ const styles = StyleSheet.create({
         color: "black",
     },
     button: {
-        alignItems: "center",
-        backgroundColor: "#DDDDDD",
-        padding: 50,
+        backgroundColor: 'rgba(0,0,0, 0.4)',
+        padding: 30,
         marginTop: 30,
         marginLeft: 20,
         marginRight: 20,
     },
+    buttonList: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        alignContent: 'center'
+    },
     textButton: {
         fontSize: 30, 
         color: "white",
-
+        textTransform: "none",
+    },
+    bigIcon: {
+        width: 100,
+        height: 120,
     }
 });
