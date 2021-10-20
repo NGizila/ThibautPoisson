@@ -8,6 +8,7 @@ import Recettes from './screens/recettes';
 import Details from './screens/details';
 import Restaurant from './screens/restaurant';
 import Description_restaurant from './screens/description_restaurant';
+import Description_bateau from './screens/description_bateau';
 import Bateau from './screens/bateau';
 import Contacte from './screens/contacte';
 
@@ -29,6 +30,7 @@ export default function App() {
           <Stack.Screen name="Recettes" component={Recettes} options={{title: 'Recettes'}} />
           <Stack.Screen name="Details" component={Details} options={{title: 'Details'}} />
           <Stack.Screen name="Description_restaurant" component={Description_restaurant} options={{title: 'Description restaurant'}} />
+          <Stack.Screen name="Description_bateau" component={Description_bateau} options={{title: 'Description bateau'}} />
           <Stack.Screen name="Contacte" component={Contacte} options={{title: 'Contacte'}} />
         </Stack.Navigator>
       </NavigationContainer>
