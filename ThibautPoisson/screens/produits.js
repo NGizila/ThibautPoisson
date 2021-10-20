@@ -87,17 +87,17 @@ const styles = StyleSheet.create({
     },
     buttonList: {
         display: 'flex',
-        justifyContent: 'space-between',
         flexDirection: 'row',
-        alignContent: 'center'
+        alignItems: 'center',
     },
     textButton: {
         fontSize: 30, 
         color: "white",
         textTransform: "none",
+        marginLeft: 15,
     },
     bigIcon: {
         width: 100,
-        height: 120,
+        height: 100,
     }
 });
