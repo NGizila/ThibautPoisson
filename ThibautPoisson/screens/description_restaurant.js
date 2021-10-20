@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   }
 })  
 
-export default class description_restaurant extends React.Component 
+export default class Description_restaurant extends React.Component 
 {
   chargementImageselonButton()
   {

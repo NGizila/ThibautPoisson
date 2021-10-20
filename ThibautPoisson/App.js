@@ -6,29 +6,30 @@ import { StyleSheet, Text, View } from 'react-native';
 import Home from './screens/home';
 import Recettes from './screens/recettes';
 import Details from './screens/details';
+import Restaurant from './screens/restaurant';
+import Description_restaurant from './screens/description_restaurant';
+import Bateau from './screens/bateau';
+import Contacte from './screens/contacte';
+
 import { Button } from 'react-native';
-
-
-import restaurant from './screens/restaurant';
-import home from './screens/home';
-import description_restaurant from './screens/description_restaurant'
-import contacte from './screens/contacte';
-
 const Stack = createStackNavigator();
+
+/*
+<Stack.Screen name="Promotion" component={Promotion} options={{titile: 'Promotion'}} />
+*/
 
 export default function App() {
   
   return (
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="Page d'accueil" component={Home} options={{titile: 'Welcome'}} />        
-          {/* <Stack.Screen name="Promotion" component={Promotion} options={{titile: 'Promotion'}} />
-          <Stack.Screen name="Bateau" component={Bateau} options={{titile: 'Bateau'}} />
-          <Stack.Screen name="restaurant" component={restaurant} options={{titile: 'Restaurant'}} /> */}
-          <Stack.Screen name="Recettes" component={Recettes} options={{titile: 'Recettes'}} />
-          <Stack.Screen name="Details" component={Details} options={{titile: 'Details'}} />
-          <Stack.Screen name="description_restaurant" component={description_restaurant} options={{title: 'Description restaurant'}} />
-          {/* <Stack.Screen name="Contacte" component={AddFriends} options={{titile: 'Contacte'}} /> */}
+          <Stack.Screen name="Page d'accueil" component={Home} options={{title: 'Welcome'}} />        
+          <Stack.Screen name="Bateau" component={Bateau} options={{title: 'Bateau'}} />
+          <Stack.Screen name="Restaurant" component={Restaurant} options={{title: 'Restaurant'}} />
+          <Stack.Screen name="Recettes" component={Recettes} options={{title: 'Recettes'}} />
+          <Stack.Screen name="Details" component={Details} options={{title: 'Details'}} />
+          <Stack.Screen name="Description_restaurant" component={Description_restaurant} options={{title: 'Description restaurant'}} />
+          <Stack.Screen name="Contacte" component={Contacte} options={{title: 'Contacte'}} />
         </Stack.Navigator>
       </NavigationContainer>
   );
