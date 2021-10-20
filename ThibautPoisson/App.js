@@ -1,15 +1,17 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, navigation } from 'react-native';
 import Home from './screens/home';
 import Recettes from './screens/recettes';
 import Produits from './screens/produits';
 import ProduitsList from './screens/produits_list';
+import Panier from './screens/panier';
 
 import navBackground from './assets/navbarbg.png'
 import logoHome from './assets/products/homeLogo.png'
 import logoCart from './assets/products/cartLogo.png'
+import { Button } from 'react-native-paper';
 
 const Stack = createStackNavigator();
 
@@ -23,8 +25,13 @@ export default function App() {
           flex: 1,
           backgroundColor: 'rgb(0,0,0)',
       },  
-      headerRight: () => (
-          <View><Image style={styles.homeLogo} source={logoCart}/></View>
+      headerRight: (props) => (
+          <View>
+          <Button onPress={() => props.navigation.navigate('Panier')} >
+            <Image style={styles.homeLogo} source={logoCart} />
+          </Button>
+          </View>
+          
       ),
       headerLeft: (props) => (
           <Text {...props}><Image  style={styles.homeLogo} source={logoHome}/></Text>
@@ -36,6 +43,7 @@ export default function App() {
         <Stack.Screen name="Page d'accueil" component={Home} options={{title: 'Welcome'}} />
         <Stack.Screen name="Produits" component={Produits} options={headerProducts} />
         <Stack.Screen name="ProduitsList" component={ProduitsList} options={headerProducts} />
+        <Stack.Screen name="Panier" component={Panier} options={headerProducts} />
         {/* <Stack.Screen name="Promotion" component={Promotion} options={{titile: 'Promotion'}} />
         <Stack.Screen name="Bateau" component={Bateau} options={{titile: 'Bateau'}} />
         <Stack.Screen name="Resto" component={Restaurant} options={{titile: 'Resto'}} /> */}
