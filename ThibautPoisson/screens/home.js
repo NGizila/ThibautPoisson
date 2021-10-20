@@ -1,8 +1,7 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Button, Card, Title } from 'react-native-paper';
+import { StyleSheet, View } from 'react-native';
+import { Card, Title } from 'react-native-paper';
+import { TouchableOpacity} from 'react-native-gesture-handler'
 
 export default class Home extends React.Component {
  
@@ -11,9 +10,9 @@ export default class Home extends React.Component {
       <View key={cardInfo} style={styles.table}>
         <Card style={styles.item}>
           <Card.Content style={{textAlign: "center"}}>
-            <Button  onPress={()=>this.props.navigation.navigate(cardInfo)}>
+            <TouchableOpacity  key={cardInfo} activeOpacity={0.8} onPress={()=>this.props.navigation.navigate(cardInfo)}>
               <Title>{cardInfo}</Title>
-            </Button>
+            </TouchableOpacity>
           </Card.Content>
         </Card>
       </View>
@@ -21,10 +20,8 @@ export default class Home extends React.Component {
   }
   render() {
   const row1 = ['Produits']
-  const row2 = ['Bateaux','Restaurants']
-  const row3 = ['Recettes','Contacte']
-  // const table = ['Products','Bateau','Restaurant','Promotion','Contact']
-  // const table = [row1,row2]
+  const row2 = ['Bateau','Restaurant']
+  const row3 = ['Recettes','Contact']
   
 
   let cardData1 = row1.map(cardInfo => (
@@ -44,11 +41,6 @@ export default class Home extends React.Component {
         <View style={styles.column}>
           <View  style={styles.row} >
             {cardData1}  
-            {/* <Button title={cardData1} onPress={()=>goToScreen(cardData1)}> */}
-            
-              {cardData1}
-            
-              {/* </Button> */}  
           </View>
           <View  style={styles.row}>
             {cardData2}
@@ -63,12 +55,12 @@ export default class Home extends React.Component {
  }
 }
 
+
 const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
     alignItems: "center",
     flex: 1
-    // flexWrap: 'wrap',
   },
 
   table: {
