@@ -9,6 +9,11 @@ import Details from './screens/details';
 import { Button } from 'react-native';
 
 
+import restaurant from './screens/restaurant';
+import home from './screens/home';
+import description_restaurant from './screens/description_restaurant'
+import contacte from './screens/contacte';
+
 const Stack = createStackNavigator();
 
 export default function App() {
@@ -26,7 +31,6 @@ export default function App() {
           {/* <Stack.Screen name="Contacte" component={AddFriends} options={{titile: 'Contacte'}} /> */}
         </Stack.Navigator>
       </NavigationContainer>
-
   );
 }
 
