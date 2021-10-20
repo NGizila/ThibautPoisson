@@ -1,23 +1,10 @@
 import React from 'react';
-import { StyleSheet, ImageBackground, Image, View} from 'react-native';
+import { ImageBackground, Image } from 'react-native';
 import { Title } from 'react-native-paper';
+import styles from "../constants/globalcss";
 
 const image = require("../assets/background.png")
 
-const styles = StyleSheet.create({
-  imgBackground: {
-      width: '100%',
-      height: '100%',
-      flex: 1,
-      position: 'absolute',
-  },
-  img: {
-    width: '40%',
-    height: '40%',
-    alignItems: "center",
-    justifyContent: "center",
-  }
-})  
 
 export default class Description_restaurant extends React.Component 
 {

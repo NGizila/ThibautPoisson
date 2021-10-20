@@ -1,55 +1,7 @@
 import React from 'react';
 import {View, ImageBackground, StyleSheet, Button,Text} from 'react-native';
 import {Card,Title} from 'react-native-paper';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
-const styles = StyleSheet.create({
-    imgBackground: {
-        width: '100%',
-        height: '100%',
-        flex: 1,
-        position: 'absolute',
-    },
-    
-    container: {
-        justifyContent: "flex-end",
-        alignItems: "center",
-        flex: 1
-    },
-    
-    table: {
-        flex: 1,
-        width: 250,
-        flexDirecton: 'row',
-    },
-    item: {
-        margin: 1,
-        flex: 1,
-        flexDirection: "column"
-    },
-      
-    column: {
-        flex: 1,
-        flexDirection: "column"
-    },
-      
-    row: {
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "row",
-    },
-
-    button_home: {
-        backgroundColor: 'rgba(52, 52, 52, 0.2)',
-        justifyContent: screenLeft
-    },
-
-    text: {
-        alignItems: "center",
-        justifyContent: "center",
-    }
-})
+import styles from "../constants/globalcss";
 
 const row1 = ["Bistrot des Gascons","Les fous de l'îles"]
 const row2 = ['Bistrot Landais','Villa 9-trois']

@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import Home from './screens/home';
 import Recettes from './screens/recettes';
@@ -11,11 +11,8 @@ import Description_restaurant from './screens/description_restaurant';
 import Bateau from './screens/bateau';
 import Contact from './screens/contact';
 
-const Stack = createStackNavigator();
 
-/*
-<Stack.Screen name="Promotion" component={Promotion} options={{titile: 'Promotion'}} />
-*/
+const Stack = createStackNavigator();
 
 export default function App() {
   

@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 import { StyleSheet, Text, View } from "react-native"
-
+import styles from "../constants/globalcss";
 
 const background = require('../assets/background.png')
 export default class Produits extends React.Component{
