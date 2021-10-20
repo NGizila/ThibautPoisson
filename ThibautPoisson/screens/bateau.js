@@ -26,7 +26,7 @@ export default class Restaurant extends React.Component {
                                     }
                                     else
                                     {
-                                        this.props.navigation.navigate("contacte");
+                                        this.props.navigation.navigate("Contact");
                                     } 
                                 }
                             }
