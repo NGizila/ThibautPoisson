@@ -21,9 +21,7 @@ export default class Home extends React.Component {
   render() {
   const row1 = ['Produits']
   const row2 = ['Bateau','Restaurant']
-  const row3 = ['Recettes','Contacte']
-  // const table = ['Products','Bateau','Restaurant','Promotion','Contact']
-  // const table = [row1,row2]
+  const row3 = ['Recettes','Contact']
   
 
   let cardData1 = row1.map(cardInfo => (
@@ -43,11 +41,6 @@ export default class Home extends React.Component {
         <View style={styles.column}>
           <View  style={styles.row} >
             {cardData1}  
-            {/* <Button title={cardData1} onPress={()=>goToScreen(cardData1)}> */}
-            
-              {cardData1}
-            
-              {/* </Button> */}  
           </View>
           <View  style={styles.row}>
             {cardData2}
@@ -68,7 +61,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     flex: 1
-    // flexWrap: 'wrap',
   },
 
   table: {

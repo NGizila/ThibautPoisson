@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     }
 })
 
-export default class Contacte extends React.Component 
+export default class Contact extends React.Component 
 {
     render() {
         return (
