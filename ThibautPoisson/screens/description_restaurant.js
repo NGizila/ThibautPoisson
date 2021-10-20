@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageBackground, Image } from 'react-native';
+import { ImageBackground, Image, View } from 'react-native';
 import { Title } from 'react-native-paper';
 import styles from "../constants/globalcss";
 
@@ -33,9 +33,13 @@ export default class Description_restaurant extends React.Component
     return(
         <>
         <ImageBackground style={styles.imgBackground} source={require("../assets/background.png")}>
-          <Title> {this.props.route.params} </Title>
-          <Image style={styles.img} source={img}></Image>
-          <Title>"ajouter texte (identique pour tout les restaurants)"</Title>
+          <View style={styles.header,{alignItems: 'center'}}>
+            <Title> {this.props.route.params} </Title>
+          </View>
+          <View style={styles.container}>            
+            <Image style={styles.imageDetails} source={img}></Image>
+            <Title>"ajouter texte (identique pour tout les restaurants)"</Title>
+          </View>
         </ImageBackground>
         </>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View,ImageBackground, SafeAreaView,Image, FlatList,StatusBar, ImageBackgroundBase } from 'react-native';
+import { Text, View,ImageBackground, SafeAreaView,Image, FlatList } from 'react-native';
 import { TouchableOpacity} from 'react-native-gesture-handler'
-import Details from './details';
+
 import styles from "../constants/globalcss";
 
 export default class Recettes extends React.Component {
