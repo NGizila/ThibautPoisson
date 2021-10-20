@@ -1,7 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View,ImageBackground, SafeAreaView, FlatList,StatusBar, ImageBackgroundBase } from 'react-native';
+import { StyleSheet, Text, View,ImageBackground, SafeAreaView,Image, FlatList,StatusBar, ImageBackgroundBase } from 'react-native';
 import { TouchableOpacity} from 'react-native-gesture-handler'
 import Details from './details';
+// import { boutons as recettes } from '../constants/recettes_boutons';
+
 export default class Recettes extends React.Component {
   constructor(props){
     super(props)
@@ -9,7 +11,7 @@ export default class Recettes extends React.Component {
     render() {
     const recettes = require('../constants/recettes_boutons.json')
     const recettes_intro = require('../constants/recettes_intro.json')
-
+      
     const Item = ({ item }) => (
         <View>
             <TouchableOpacity 
@@ -18,6 +20,7 @@ export default class Recettes extends React.Component {
                     onPress={()=>this.props.navigation.navigate('Details',item)}
             >
             <View style={styles.item}>
+                <Image style={styles.image} source={require("../assets/recettes/"+item.image_icon)} />
                 <Text style={styles.textBouton}>{item.name}</Text>
           </View>
           </TouchableOpacity>
@@ -79,10 +82,16 @@ export default class Recettes extends React.Component {
 
 const styles = StyleSheet.create({
   imgBackground: {
-    width: '100%',
-    height: '100%',
+    
     flex: 1,
     position: 'absolute',
+    width: '100%',
+    height: '100%',
+    
+    },
+    image: {
+      width: 40,
+      height: 40,
     },
     header: {
       marginBottom: 20,
@@ -109,11 +118,16 @@ const styles = StyleSheet.create({
       padding: 20,
       marginVertical: 8,
       marginHorizontal: 16,
+      flexDirection: 'row',
+      justifyContent: "center",
+      alignItems: "center",
+      flex: 1
     },
     textBouton:{
       color: 'white',
       fontsize: 30,
       flex: 1,
+      marginHorizontal: 10,
       width: 300,
       flexDirecton: 'row',
     },
