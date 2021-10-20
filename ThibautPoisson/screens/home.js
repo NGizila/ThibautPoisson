@@ -21,7 +21,7 @@ export default class Home extends React.Component {
   render() {
   const row1 = ['Produits']
   const row2 = ['Bateau','Restaurant']
-  const row3 = ['Recettes','Contacte']
+  const row3 = ['Recettes','Contact']
   // const table = ['Products','Bateau','Restaurant','Promotion','Contact']
   // const table = [row1,row2]
   
