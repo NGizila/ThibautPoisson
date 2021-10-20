@@ -19,22 +19,20 @@ const styles = StyleSheet.create({
   }
 })  
 
-export default class Description_restaurant extends React.Component 
+export default class Description_bateau extends React.Component 
 {
   chargementImageselonButton()
   {
     switch (this.props.route.params)
     {
-      case "Bistrot des Gascons" :  return require("../assets/restaurants/desGascons.png");
+      case "De la Brise" :  return require("../assets/bateaux/deLaBrise.png");
                                     break;
-      case "Les fous de l'îles" : return require("../assets/restaurants/fousDeLIle.png");
+      case "Saphir" : return require("../assets/bateaux/saphir.png");
                                   break;
-      case "Bistrot Landais" :  return require("../assets/restaurants/bistrotLandais.png");
+      case "Ghast Micher" :  return require("../assets/bateaux/gastMicher.png");
                                 break;
-      case "Villa 9-trois" :  return require("../assets/restaurants/villa9Trois.png");
+      case "Aquillon" :  return require("../assets/bateaux/aquilon.png");
                               break;
-      case "Bistrot du Sommelier":  return require("../assets/restaurants/duSommelier.png");
-                                    break;
     }
   }
 
@@ -48,7 +46,7 @@ export default class Description_restaurant extends React.Component
         <ImageBackground style={styles.imgBackground} source={require("../assets/background.png")}>
           <Title> {this.props.route.params} </Title>
           <Image style={styles.img} source={img}></Image>
-          <Title>"ajouter texte (identique pour tout les restaurants)"</Title>
+          <Title>"ajouter texte (identique pour tout les bateaux)"</Title>
         </ImageBackground>
         </>
     );
