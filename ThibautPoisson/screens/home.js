@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { Card, Title } from 'react-native-paper';
 import { TouchableOpacity} from 'react-native-gesture-handler'
+
 export default class Home extends React.Component {
  
   cardFunction(cardInfo){
@@ -19,7 +20,7 @@ export default class Home extends React.Component {
   }
   render() {
   const row1 = ['Produits']
-  const row2 = ['Bateaux','Restaurants']
+  const row2 = ['Bateau','Restaurant']
   const row3 = ['Recettes','Contacte']
   // const table = ['Products','Bateau','Restaurant','Promotion','Contact']
   // const table = [row1,row2]
