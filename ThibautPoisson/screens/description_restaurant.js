@@ -31,7 +31,32 @@ export default class Description_restaurant extends React.Component
     let img = this.chargementImageselonButton()
 
     return(
-        <P> Test </P>
+      <>
+      <ImageBackground style={styles.imgBackground} source={require("../assets/background.png")}>
+        <View style={styles.header,{alignItems: 'center'}}>
+          <Title> {this.props.route.params} </Title>
+        </View>
+        <View style={styles.container}>            
+          <Image style={styles.imageDetails} source={img}></Image>
+          <View>
+            <View>
+              <Text style={styles.title}> XXXYYYZZZ </Text>
+              <Text> Qu'il est chaud le soleil </Text>
+              <Text> Quand nous sommes en vacances  </Text>
+              <Text> Il y a de la joie, des hirondelles </Text>
+              <Text> C'est le sud de la France </Text>
+              <Text> Papa bricole au garage </Text>
+              <Text> Maman lit dans la meme chaise longue </Text>
+              <Text> Dans ce joli paysage </Text>
+              <Text> Moi je me balade en tongue </Text>
+              <Text> </Text>
+              <Text> Que du bonheur! </Text>
+              <Text> Que du bonheur! </Text>
+            </View>
+          </View>
+        </View>
+      </ImageBackground>
+      </>
     );
   };
 };

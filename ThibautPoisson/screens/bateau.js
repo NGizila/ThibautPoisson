@@ -22,7 +22,6 @@ export default class Restaurant extends React.Component {
                             activeOpacity={0.8} 
                             onPress={() => 
                                 {
-                                    console.log(cardInfo);
                                     if (cardInfo != "Contact")
                                     {
                                         this.props.navigation.navigate("Description_bateau", cardInfo);
@@ -59,7 +58,7 @@ export default class Restaurant extends React.Component {
         return (
             <>
             <ImageBackground style={styles.imgBackground} source={require("../assets/background.png")}>
-                <Button title="Home" style={styles.button_home} onPress={ () => this.props.navigation.navigate("Home")}></Button> 
+                <Button title="Home" style={styles.button_home} onPress={ () => this.props.navigation.navigate("Page d'accueil")}></Button> 
                 <View style={styles.header,{alignItems: 'center'}}>
                     <Title> Restaurants partenaires </Title>  
                     <Text> Tout les eaux mènent à Thibeau </Text>
