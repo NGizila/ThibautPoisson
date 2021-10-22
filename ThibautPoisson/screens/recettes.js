@@ -52,9 +52,6 @@ export default class Recettes extends React.Component {
           <View>
                 <View>
                   <Text style={{fontSize: 25, fontWeight: 'bold'}}>Nos recettes</Text>
-                  <Text style={{fontSize: 30, fontWeight: 'bold'}}>
-                    ThibaultPoisson
-                  </Text>
                 </View>
 
             <Text style={styles.simple_text}>

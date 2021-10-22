@@ -22,9 +22,10 @@ export default class Restaurant extends React.Component {
                             activeOpacity={0.8} 
                             onPress={() => 
                                 {
-                                    if (cardInfo != "Devenez partenaire!")
+                                    console.log(cardInfo);
+                                    if (cardInfo != "Contact")
                                     {
-                                        this.props.navigation.navigate("Description_restaurant", cardInfo);
+                                        this.props.navigation.navigate("Description_bateau", cardInfo);
                                     }
                                     else
                                     {
