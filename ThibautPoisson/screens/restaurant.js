@@ -23,7 +23,7 @@ export default class Restaurant extends React.Component {
                                 }
                                 else
                                 {
-                                    this.props.navigation.navigate("contacte");
+                                    this.props.navigation.navigate("Contacte");
                                 } 
                             }
                         }>
@@ -51,7 +51,7 @@ export default class Restaurant extends React.Component {
         return (
             <>
             <ImageBackground style={styles.imgBackground} source={require("../assets/background.png")}>
-                <Button title="Home" style={styles.button_home} onPress={ () => this.props.navigation.navigate("home")}></Button> 
+                <Button title="Home" style={styles.button_home} onPress={ () => this.props.navigation.navigate("Home")}></Button> 
                 <Title> Restaurants partenaires </Title>  
                 <View>
                     <Text> Tout les restaurant partenaires avec le bateau de Thibeau </Text>

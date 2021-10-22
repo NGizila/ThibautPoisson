@@ -1,11 +1,13 @@
 import React from 'react';
 import {View, ImageBackground, TouchableOpacity, Button,Text} from 'react-native';
 import {Card,Title} from 'react-native-paper';
+
 import styles from "../constants/globalcss";
 
-const row1 = ["Bistrot des Gascons","Les fous de l'îles"]
-const row2 = ['Bistrot Landais','Villa 9-trois']
-const row3 = ['Bistrot du Sommelier','Devenez partenaire!']
+
+const row1 = ["De la Brise","Saphir"]
+const row2 = ['Ghast Micher','Aquillon']
+const row3 = ['Contact','Contact']
     
 export default class Restaurant extends React.Component {
     
@@ -59,7 +61,7 @@ export default class Restaurant extends React.Component {
                 <Button title="Home" style={styles.button_home} onPress={ () => this.props.navigation.navigate("Home")}></Button> 
                 <View style={styles.header,{alignItems: 'center'}}>
                     <Title> Restaurants partenaires </Title>  
-                    <Text> Tout les restaurant partenaires avec le bateau de Thibeau </Text>
+                    <Text> Tout les eaux mènent à Thibeau </Text>
                     <Text>06.63.99.99.78</Text>
                     <Text>lebateaudethibault@gmail.com</Text>
                     <Text>www.facebook.com/lebateau de Thibeau</Text>

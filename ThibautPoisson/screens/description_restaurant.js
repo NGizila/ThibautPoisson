@@ -12,15 +12,15 @@ export default class Description_restaurant extends React.Component
   {
     switch (this.props.route.params)
     {
-      case "Bistrot des Gascons" :  return require("../assets/desGascons.png");
+      case "Bistrot des Gascons" :  return require("../assets/restaurants/desGascons.png");
                                     break;
-      case "Les fous de l'îles" : return require("../assets/fousDeLIle.png");
+      case "Les fous de l'îles" : return require("../assets/restaurants/fousDeLIle.png");
                                   break;
-      case "Bistrot Landais" :  return require("../assets/bistrotLandais.png");
+      case "Bistrot Landais" :  return require("../assets/restaurants/bistrotLandais.png");
                                 break;
-      case "Villa 9-trois" :  return require("../assets/villa9Trois.png");
+      case "Villa 9-trois" :  return require("../assets/restaurants/villa9Trois.png");
                               break;
-      case "Bistrot du Sommelier":  return require("../assets/duSommelier.png");
+      case "Bistrot du Sommelier":  return require("../assets/restaurants/duSommelier.png");
                                     break;
     }
   }
