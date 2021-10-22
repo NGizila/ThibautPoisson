@@ -44,6 +44,12 @@ export default class PanierModal extends React.Component{
                                 <Text style={styles.modalText}>5</Text>
                             </TouchableOpacity>
                         </View>
+                        <TouchableOpacity onPress={() => this.setState({quantity: 5})}>
+                                <Text style={styles.modalText,{"background-color": "#4CAF50"}}>Ajouter</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={() => this.setState({quantity: 5})}>
+                                <Text style={styles.modalText,{"background-color": "#f44336"}}>Supprimer</Text>
+                            </TouchableOpacity>
                     </View>
                 </Modal>
             </View>
