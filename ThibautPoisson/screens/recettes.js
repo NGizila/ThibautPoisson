@@ -49,23 +49,23 @@ export default class Recettes extends React.Component {
       <>
       <ImageBackground style={styles.imgBackground} source={require("../assets/background.png")}>
         <View style={styles.container}>
-          <View style={styles.header}>
+          <View>
                 <View>
                   <Text style={{fontSize: 25, fontWeight: 'bold'}}>Nos recettes</Text>
                   <Text style={{fontSize: 30, fontWeight: 'bold'}}>
                     ThibaultPoisson
                   </Text>
                 </View>
-            </View>
-            <View style={styles.categoryContainer}>
-              <Text style={{fontSize: 15, fontStyle: 'italic', fontWeight: 'bold'}}>
-                Toutes les recettes du bateau de Thibault
-              </Text>
+
+            <Text style={styles.simple_text}>
+              Toutes les recettes du bateau de Thibault
               {recettesIntroData}
-            </View>
+            </Text>
+          </View>
             
-          <SafeAreaView style={styles.container}>
+          <SafeAreaView style={styles.container,{flex:1}}>
               <FlatList
+                  columnWrapperStyle={{ flexWrap: 'wrap', flex: 1, marginTop: 5 }}
                   data={recettes}
                   renderItem={renderItem}
                   keyExtractor={item => item}

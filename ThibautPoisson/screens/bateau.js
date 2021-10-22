@@ -66,7 +66,7 @@ export default class Restaurant extends React.Component {
                     <Text>lebateaudethibault@gmail.com</Text>
                     <Text>www.facebook.com/lebateau de Thibeau</Text>
                 </View>
-                <View style={styles.container}>
+                <View style={styles.container,{flex:1}}>
                     <View style={styles.row}>
                         <View style={styles.column}>
                             <View style={styles.row}>

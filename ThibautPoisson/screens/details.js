@@ -22,7 +22,6 @@ export default class Details extends React.Component{
                     <View style={styles.item}>
                         <Text style={{fontSize: 13, fontStyle: 'italic'}}> {item.recette.text}</Text>
                         <Text style={{fontSize: 13, fontStyle: 'italic'}}> {item.recette.descriptionImage}</Text>
-                        <Text style={{fontSize: 13, fontStyle: 'italic'}}> {item.recette.bottombar}</Text>
                     </View>
                 </View>
             </ImageBackground>

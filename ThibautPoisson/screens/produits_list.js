@@ -1,8 +1,8 @@
 import React from 'react';
-import {Text, View, StyleSheet, ImageBackground, TouchableOpacity, Image} from 'react-native';
-import poulpe from '../assets/products/poulpe.png'
+import {Text, View, ImageBackground} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import ListComponent from '../components/listcomponent';
+import styles from '../constants/global_product';
 
 export default class ProduitsList extends React.Component{
     
@@ -24,43 +24,4 @@ export default class ProduitsList extends React.Component{
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: 'black'
-    },
-    image: {
-        flex: 1,
-        justifyContent: "center",
-    },
-    text: {
-        fontSize: 25,
-        fontStyle: "italic",
-        textAlign: "center",
-        color: "black",
-    },
-    button: {
-        backgroundColor: 'rgba(0,0,0, 0.4)',
-        padding: 30,
-    },
-    buttonList: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        flexDirection: 'row'
-    },
-    textButton1: {
-        fontSize: 30,
-        flex: 1,
-        color: "white",
-        marginLeft: 15,
-    },
-    textButton: {
-        fontSize: 30, 
-        color: "white",
-        textTransform: "none",
-    },
-    tinyIcon: {
-        width: 54,
-        height: 50,
-    }
-});
+

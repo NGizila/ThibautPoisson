@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, ImageBackground } from 'react-native';
-import { Card, Title } from 'react-native-paper';
+import { Image, View, ImageBackground } from 'react-native';
+import { Card,Text, Title } from 'react-native-paper';
 import { TouchableOpacity} from 'react-native-gesture-handler';
 import styles from "../constants/globalcss";
 
@@ -11,8 +11,11 @@ export default class Home extends React.Component {
     <View key={cardInfo} style={styles.table}>
       <Card style={styles.item}>
         <Card.Content style={{textAlign: "center"}}>
-          <TouchableOpacity  key={cardInfo} activeOpacity={0.8} onPress={()=>this.props.navigation.navigate(cardInfo)}>
-            <Title>{cardInfo}</Title>
+          <TouchableOpacity key={cardInfo} activeOpacity={0.8} onPress={()=>this.props.navigation.navigate(cardInfo)}>
+            <View  style={styles.row_home}>
+              <Image  style={styles.image} source={require("../assets/home/"+ cardInfo +".png")}/>
+              <Title style={{paddingLeft: 10}}>{cardInfo}</Title>
+            </View>
           </TouchableOpacity>
         </Card.Content>
       </Card>
@@ -39,7 +42,14 @@ export default class Home extends React.Component {
   return(
     <>
       <ImageBackground  style={styles.imgBackground} source={require("../assets/background.png")}>
-        <View style={styles.container}>
+        <View style={styles.container}> 
+          <Title> Le bateau de Thibault </Title>
+          <Text> Vente en direct de notre bateau </Text>
+          <Text> Produits selon la saison; Livraisons sur Paris </Text>
+          <Text> lebateaudethibault@gmail.com </Text>
+          <Text> www.facebook.com/lebateaudethibault </Text>
+        </View>
+        <View style={styles.container,{flex:1}}>
           <View style={styles.row}>
             <View style={styles.column}>
               <View  style={styles.row} >

@@ -10,12 +10,14 @@ export default class Contact extends React.Component
         return (
             <>
             <ImageBackground style={styles.imgBackground} source={require("../assets/background.png")}>
-                <Title> Le bateau de Thibault </Title>
-                <Image style={styles.img} source= {require("../assets/TIG.png")}></Image>
-                <Text>06.63.99.99.78</Text>
-                <Text>lebateaudethibault@gmail.com</Text>
-                <Text>www.facebook.com/lebateau de Thibeau</Text>
-                <Text> (ajouter description)</Text>
+                <View style={styles.container}>
+                    <Title> Le bateau de Thibault </Title>
+                    <Image style={styles.img} source= {require("../assets/TIG.png")}></Image>
+                    <Text>06.63.99.99.78</Text>
+                    <Text>lebateaudethibault@gmail.com</Text>
+                    <Text>www.facebook.com/lebateau de Thibeau</Text>
+                    <Text> (ajouter description)</Text>
+                </View>
             </ImageBackground>
             </>
         );
