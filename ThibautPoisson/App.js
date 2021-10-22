@@ -58,6 +58,7 @@ export default function App() {
         <Stack.Screen name="Restaurant" component={Restaurant} options={{title: 'Restaurant'}} />
         <Stack.Screen name="Recettes" component={Recettes} options={{title: 'Recettes'}} />
         <Stack.Screen name="Details" component={Details} options={{title: 'Details'}} />
+        <Stack.Screen name="Description_bateau" component={Description_bateau} options={{title: 'Description restaurant'}} />
         <Stack.Screen name="Description_restaurant" component={Description_restaurant} options={{title: 'Description restaurant'}} />
         <Stack.Screen name="Contact" component={Contact} options={{title: 'Contact'}} />
       </Stack.Navigator>

@@ -24,7 +24,7 @@ export default class Restaurant extends React.Component {
                                 {
                                     if (cardInfo != "Devenez partenaire!")
                                     {
-                                        this.props.navigation.navigate("Description_restaurant", cardInfo);
+                                        this.props.navigation.navigate("Description_bateau", cardInfo);
                                     }
                                     else
                                     {
