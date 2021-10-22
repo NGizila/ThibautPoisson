@@ -50,7 +50,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="screen">
-        <Stack.Screen name="Page d'accueil" component={Home} options={{title: 'Welcome'}} />
+        <Stack.Screen name="Page d'accueil" component={Home} options={{title: "Page d'accueil"}} />
         <Stack.Screen name="Produits" component={Produits} options={headerProducts} />
         <Stack.Screen name="ProduitsList" component={ProduitsList} options={headerProducts} />
         <Stack.Screen name="Panier" component={Panier} options={headerProducts} />
