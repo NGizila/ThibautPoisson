@@ -1,21 +1,8 @@
 import React from 'react';
 import {View, ImageBackground, StyleSheet, Image, Text} from 'react-native';
 import {Title} from 'react-native-paper';
+import styles from "../constants/globalcss";
 
-const styles = StyleSheet.create({
-    imgBackground: {
-        width: '100%',
-        height: '100%',
-        flex: 1,
-        position: 'absolute',
-    },
-    img: {
-      width: '40%',
-      height: '40%',
-      alignItems: "center",
-      justifyContent: "center",
-    }
-})
 
 export default class Contact extends React.Component 
 {

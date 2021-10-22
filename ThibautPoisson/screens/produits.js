@@ -5,6 +5,9 @@ import HeaderProduits from "../components/header"
 import '../App.js'
 import poulpe from '../assets/products/poulpe.png'
 
+import styles from "../constants/globalcss";
+
+
 const background = require('../assets/background.png')
 const homeIcon = require('../assets/products/homeLogo.png')
 
