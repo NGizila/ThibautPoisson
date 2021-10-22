@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View, StyleSheet, ImageBackground, TouchableOpacity, Background, Button} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import ListModal from '../components/listmodal';
+import styles from '../constants/global_product';
 
 export default class Panier extends React.Component{
     constructor(props) {
@@ -63,65 +64,3 @@ export default class Panier extends React.Component{
         )
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: 'black'
-    },
-    image: {
-        flex: 1,
-        justifyContent: "center",
-    },
-    text: {
-        fontSize: 25,
-        fontStyle: "italic",
-        textAlign: "center",
-        color: "black",
-    },
-    button: {
-        backgroundColor: 'rgba(0,0,0, 0.4)',
-        padding: 30,
-    },
-    buttonList: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        flexDirection: 'row'
-    },
-    textButton1: {
-        fontSize: 30,
-        flex: 1,
-        color: "white",
-        marginLeft: 15,
-    },
-    textButton: {
-        fontSize: 30, 
-        color: "white",
-        textTransform: "none",
-    },
-    tinyIcon: {
-        width: 54,
-        height: 50,
-    },
-    infoResto: {
-        borderColor: "black",
-        backgroundColor: 'rgba(0,0,0,0.4)',
-        display: 'flex', 
-        justifyContent: 'center',
-        fontSize: 18
-        
-    },
-    textTotal:{
-        marginRight: 54,
-        color: 'white', 
-        fontSize: 42,
-        textAlign: 'right',
-    },
-    textResto: {
-        fontSize: 24,
-        textAlign: 'left',
-        marginLeft: 20,
-        color: 'white',
-    },
-
-});

@@ -78,5 +78,25 @@ export default StyleSheet.create({
     modalText: {
         marginBottom: 15,
         textAlign: "center"
-    }
+    },
+    infoResto: {
+        borderColor: "black",
+        backgroundColor: 'rgba(0,0,0,0.4)',
+        display: 'flex', 
+        justifyContent: 'center',
+        fontSize: 18
+        
+    },
+    textTotal:{
+        marginRight: 54,
+        color: 'white', 
+        fontSize: 42,
+        textAlign: 'right',
+    },
+    textResto: {
+        fontSize: 24,
+        textAlign: 'left',
+        marginLeft: 20,
+        color: 'white',
+    },
 });
